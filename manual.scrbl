@@ -1,11 +1,16 @@
 #lang scribble/manual
 @(require planet/scribble
-          (for-label "main.rkt"))
+          (for-label "main.rkt"
+                     racket/base))
 
 @title{While loops for Racket}
 
 This basically provides @racket[while], @racket[break] and
 @racket[continue].
+
+
+@section{Example and usage}
+@defmodule/this-package[main]
 
 @codeblock|{
 #lang racket/base
@@ -18,8 +23,9 @@ This basically provides @racket[while], @racket[break] and
 (while #t
   (define input (read-line))
   (unless (regexp-match #px"please" input)
+    (printf "You didn't say please\n")
     (continue))
-  (when (regexp-match #px"quit")
+  (when (regexp-match #px"quit" input)
     (break)))
 }|
 
