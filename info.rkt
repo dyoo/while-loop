@@ -5,7 +5,7 @@
 (define required-core-version "5.1.1")
 (define version "1.0")
 (define repositories '("4.x"))
-(define scribblings '("manual.scrbl"))
+(define scribblings '(("manual.scrbl")))
 (define primary-file "main.rkt")
 (define blurb
   '("While loops for Racket."))
